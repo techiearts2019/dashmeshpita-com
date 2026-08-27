@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 export function Logo({ inverted = false }: { inverted?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-3" aria-label="Dashmeshpita — home">
-      <span className="grid size-10 shrink-0 place-items-center rounded-md bg-gold text-gold-foreground shadow-card">
+      <span className="grid size-10 shrink-0 place-items-center rounded-md bg-navy shadow-card">
         <svg
           className="size-6"
           aria-hidden="true"
