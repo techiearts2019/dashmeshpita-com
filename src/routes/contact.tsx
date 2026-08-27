@@ -145,11 +145,11 @@ function ContactPage() {
                   <Phone className="size-4" /> Call Now
                 </a>
               </Button>
-              <!--<Button asChild variant="gold" size="lg">
+              {/* <Button asChild variant="gold" size="lg">
                 <a href={`mailto:${company.email}`}>
                   <Mail className="size-4" /> Email Us
                 </a>
-              </Button>-->
+              </Button> */}
               <Button asChild variant="outline" size="lg">
                 <a href={mapsDirectionsHref} target="_blank" rel="noreferrer">
                   <Navigation className="size-4" /> Get Directions
