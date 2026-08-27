@@ -1,13 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2, Mail, MapPin, Navigation, Phone, Globe } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
+import { Mail, MapPin, Navigation, Phone, Globe } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { company, mapsDirectionsHref, mapsEmbedSrc } from "@/lib/company";
