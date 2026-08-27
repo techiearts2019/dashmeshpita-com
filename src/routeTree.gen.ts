@@ -12,8 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ClientsRouteImport } from './routes/clients'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as VerticalsRouteImport } from './routes/verticals'
 
 const IndexRoute = IndexRouteImport.update({
@@ -31,14 +34,29 @@ const ClientsRoute = ClientsRouteImport.update({
   path: '/clients',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InfrastructureRoute = InfrastructureRouteImport.update({
   id: '/infrastructure',
   path: '/infrastructure',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VerticalsRoute = VerticalsRouteImport.update({
@@ -51,16 +69,22 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/clients': typeof ClientsRoute
+  '/contact': typeof ContactRoute
   '/infrastructure': typeof InfrastructureRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/verticals': typeof VerticalsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/clients': typeof ClientsRoute
+  '/contact': typeof ContactRoute
   '/infrastructure': typeof InfrastructureRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/verticals': typeof VerticalsRoute
 }
 export interface FileRoutesById {
@@ -68,24 +92,46 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/clients': typeof ClientsRoute
+  '/contact': typeof ContactRoute
   '/infrastructure': typeof InfrastructureRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/verticals': typeof VerticalsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/clients' | '/infrastructure' | '/services' | '/verticals'
+    | '/'
+    | '/about'
+    | '/clients'
+    | '/contact'
+    | '/infrastructure'
+    | '/privacy-policy'
+    | '/services'
+    | '/terms-and-conditions'
+    | '/verticals'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/about' | '/clients' | '/infrastructure' | '/services' | '/verticals'
+    | '/'
+    | '/about'
+    | '/clients'
+    | '/contact'
+    | '/infrastructure'
+    | '/privacy-policy'
+    | '/services'
+    | '/terms-and-conditions'
+    | '/verticals'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/clients'
+    | '/contact'
     | '/infrastructure'
+    | '/privacy-policy'
     | '/services'
+    | '/terms-and-conditions'
     | '/verticals'
   fileRoutesById: FileRoutesById
 }
@@ -93,8 +139,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ClientsRoute: typeof ClientsRoute
+  ContactRoute: typeof ContactRoute
   InfrastructureRoute: typeof InfrastructureRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   VerticalsRoute: typeof VerticalsRoute
 }
 
@@ -121,6 +170,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClientsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/infrastructure': {
       id: '/infrastructure'
       path: '/infrastructure'
@@ -128,11 +184,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfrastructureRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/verticals': {
@@ -149,8 +219,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ClientsRoute: ClientsRoute,
+  ContactRoute: ContactRoute,
   InfrastructureRoute: InfrastructureRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
   VerticalsRoute: VerticalsRoute,
 }
 export const routeTree = rootRouteImport
